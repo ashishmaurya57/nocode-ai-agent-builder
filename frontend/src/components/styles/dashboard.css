@@ -1,0 +1,423 @@
+/* Dashboard Styles - Add to your CSS file */
+
+/* Dashboard Container */
+.dashboard-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 0;
+}
+
+.dashboard-container .container-lg {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  margin: 20px auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: -2rem -2rem 2rem -2rem;
+  padding: 3rem 2rem;
+  border-radius: 20px 20px 0 0;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  opacity: 0.3;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.create-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.create-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+}
+
+/* Stats Card - Single centered card */
+.stats-card {
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.stats-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.stats-icon.total {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.stats-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.stats-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+/* Empty State */
+.empty-state {
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  position: relative;
+  overflow: hidden;
+}
+
+.empty-state::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236c757d' fill-opacity='0.05'%3E%3Cpath d='M50 50m-20 0a20 20 0 1 1 40 0a20 20 0 1 1 -40 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  color: #6c757d;
+  opacity: 0.6;
+  position: relative;
+  z-index: 1;
+}
+
+.empty-title {
+  color: #333;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.empty-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.create-first-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 25px;
+  padding: 15px 40px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.create-first-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+}
+
+/* Agent Cards */
+.agent-card-wrapper {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.agents-grid .col {
+  display: flex;
+  flex-direction: column;
+}
+
+.agents-grid .card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background: white;
+}
+
+.agents-grid .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.agents-grid .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.agents-grid .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.agents-grid .card-text {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.agents-grid .btn-group {
+  margin-top: auto;
+}
+
+.agents-grid .btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.agents-grid .btn-outline-primary:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: #667eea;
+}
+
+.agents-grid .btn-outline-success:hover {
+  background: linear-gradient(135deg, #56ab2f, #a8e6cf);
+  border-color: #56ab2f;
+}
+
+.agents-grid .btn-outline-danger:hover {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border-color: #ff6b6b;
+}
+.agents-grid {
+  position: relative;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.view-options .btn {
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.view-options .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.chat-modal .modal-content {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.chat-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.delete-modal .modal-content {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.delete-icon {
+  font-size: 3rem;
+  color: #dc3545;
+  opacity: 0.8;
+}
+
+/* Loading Spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 2rem;
+  }
+  
+  .dashboard-header {
+    margin: -1rem -1rem 2rem -1rem;
+    padding: 2rem 1rem;
+  }
+  
+  .stats-number {
+    font-size: 2rem;
+  }
+  
+  .stats-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+  }
+  
+  .create-btn,
+  .create-first-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* Animations - Updated */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-card,
+.empty-state,
+.agents-grid {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Staggered animation for agent cards */
+.agent-card-wrapper {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Hover Effects */
+.card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Badge Styling */
+.badge {
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(5px);
+}
+
+/* Scrollbar Styling */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}

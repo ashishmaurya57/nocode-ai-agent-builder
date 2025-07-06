@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+
+# dotenv environment variables
+.env
+
+# Firebase service account key (if stored separately)
+firebase-service-account.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Optional npm cache
+.npm/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+
+# Build output (if any)
+dist/
+build/
+
+# Coverage reports (if using testing tools)
+coverage/

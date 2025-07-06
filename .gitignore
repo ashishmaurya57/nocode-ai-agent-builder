@@ -1,0 +1,31 @@
+# Root .gitignore
+
+# Node.js (backend)
+backend/node_modules/
+backend/.env
+# backend/logs/
+backend/uploads/
+# backend/coverage/
+# backend/dist/
+# backend/firebase-service-account.json
+
+# Vite + React (frontend)
+frontend/node_modules/
+frontend/.env
+# frontend/dist/
+
+# IDEs and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# System files
+*.swp
