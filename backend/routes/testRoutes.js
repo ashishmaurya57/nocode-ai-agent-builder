@@ -1,46 +1,23 @@
 import express from 'express';
-import Automation from '../models/Automation.js';
-import Agent from '../models/Agent.js';
-import { runAgent } from '../services/agentRunner.js';
-import { sendEmail } from '../utils/sendEmail.js';
+import axios from 'axios';
 
 const router = express.Router();
 
-router.post('/trigger/:id', async (req, res) => {
+router.get('/test-telegram', async (req, res) => {
   try {
-    const automation = await Automation.findById(req.params.id).lean();
-    if (!automation || !automation.isActive) {
-      return res.status(404).json({ message: 'Automation not found or inactive' });
-    }
+    const botToken = '7153944140:AAG58rNMz3gyR5T9QTFEQtN5Yc8lyL1O_34';  // Replace with your actual bot token
+    const chatId = '5083511455'; // Replace with your chat ID (user ID or @channelusername)
+    const message = '✅ Telegram bot is working!';
 
-    const agent = await Agent.findById(automation.agentId);
-    if (!agent) return res.status(404).json({ message: 'Agent not found' });
-
-    const response = await runAgent({
-      provider: agent.provider,
-      apiKey: agent.apiKey,
-      model: agent.model,
-      prompt: agent.prompt,
-      question: agent.prompt,
-      chatHistory: [],
-      useRAG: agent.useRAG,
-      embedProvider: agent.embedProvider,
-      embedApiKey: agent.embedApiKey,
-      memory: agent.memory,
-      agentId: agent._id,
-      documentPath: agent.documentPath
+    await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      chat_id: chatId,
+      text: message,
     });
 
-    for (const action of automation.actions) {
-      if (action.type === 'email') {
-        await sendEmail(action.config.email, 'Automated Email', response);
-      }
-    }
-
-    res.json({ success: true, message: 'Email sent manually' });
-  } catch (err) {
-    console.error('❌ Error manually triggering automation:', err);
-    res.status(500).json({ message: 'Internal Server Error' });
+    res.json({ success: true, message: 'Message sent to Telegram!' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Failed to send message' });
   }
 });
 
